@@ -1,9 +1,7 @@
 {
   "index": "简介",
-  "Interview": "前端手写题",
-
-  "about": {
-    "title": "About",
-    "type": "page"
-  }
+  "JS": "JS",
+  "CSS": "CSS",
+  "React": "React",
+  "Interview": "前端手写题"
 }
