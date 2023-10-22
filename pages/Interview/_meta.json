@@ -1,0 +1,10 @@
+{
+  "ShallowClone": "浅拷贝",
+  "DeepClone": "深拷贝",
+  "Debounce": "防抖",
+  "Throttle": "节流",
+  "Memorize": "记忆",
+  "RemoveDuplicate": "数组去重",
+  "Flatten": "数组展平",
+  "Promise": "Promise"
+}

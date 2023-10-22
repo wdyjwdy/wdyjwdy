@@ -1,0 +1,33 @@
+import { Callout } from 'nextra/components'
+
+- 含义：`基础类型`不共享地址，`引用类型([], {})`不共享地址
+- 常见深拷贝：`JSON.stringify()`
+```js
+function deepClone(value, stack = new Map()) {	
+	if (typeof value !== 'object') { // 基础类型
+		return value
+	}
+	
+	if (typeof value === 'object') { // 引用类型
+		if (stack.has(value)) { // 循环引用
+			return stack.get(obj)
+		} else { // 没有循环引用
+			const clone = Array.isArray(value) ? [] : {}
+			stack.set(value, clone)
+		
+			for (const [key, val] of Object.entries(value)) {
+				if (typeof val === 'object') { // 递归
+					clone[key] = deepClone(val, stack) // 传递stack里的值
+				} else {
+					clone[key] = val
+				}
+			}
+			return clone	
+		}
+	}
+}
+```
+
+<Callout type="error" emoji="️❗️">
+  只考虑了 `基础类型` 和 `引用类型` 和 `循环引用`
+</Callout>
