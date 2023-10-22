@@ -15,7 +15,7 @@ const config: DocsThemeConfig = {
     </>
   ),
   footer: {
-    component: false
+    component: <></>
   },
   useNextSeoProps() {
     return {
