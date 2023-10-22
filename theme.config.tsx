@@ -3,6 +3,11 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 import logo from './images/logo.png'
 
 const config: DocsThemeConfig = {
+  head: (
+    <>
+      <link rel='icon' href={logo.src}/>
+    </>
+  ),
   logo: (
     <>
       <img src={logo.src} width={40} height={40} alt='logo'/>
