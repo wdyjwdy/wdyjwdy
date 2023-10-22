@@ -3,5 +3,10 @@
   "JS": "JS",
   "CSS": "CSS",
   "React": "React",
-  "Interview": "前端手写题"
+  "Interview": "前端手写题",
+
+  "test": {
+    "title": "aaaa",
+    "type": "page"
+  }
 }
