@@ -17,6 +17,10 @@ const config: DocsThemeConfig = {
   footer: {
     component: <></>
   },
+  sidebar: {
+    defaultMenuCollapseLevel: 1,
+  },
+  navigation: false,
   useNextSeoProps() {
     return {
       titleTemplate: '%s'

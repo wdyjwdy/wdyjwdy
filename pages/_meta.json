@@ -1,12 +1,13 @@
 {
   "index": "简介",
+  "---1": {
+    "type": "separator"
+  },
   "JS": "JS",
   "CSS": "CSS",
   "React": "React",
-  "Interview": "前端手写题",
-
-  "test": {
-    "title": "aaaa",
-    "type": "page"
-  }
+  "---2": {
+    "type": "separator"
+  },
+  "Interview": "前端手写题"
 }
