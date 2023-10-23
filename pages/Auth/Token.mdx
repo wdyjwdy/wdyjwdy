@@ -1,0 +1,28 @@
+import Image from 'next/image'
+import token from '/images/docs/token.png'
+import refresh_token from '/images/docs/refresh_token.png'
+
+## 流程
+<Image src={token.src} alt='token' width={500} height={500}/>
+1. 用户向服务器发送账号和密码
+2. 服务器收到请求，验证后，返回 `token`
+3. 浏览器收到 `token` 后，保存下来（`localStorage` 或 `cookie`）
+4. 浏览器后续请求，将携带 `token`
+```js
+Authorization: Bearer <token>
+```
+5. 服务器对 `token` 进行验证，并返回资源
+## 结构
+- `Header`（头部）：
+	- `alg`（算法）：HS256
+	- `typ`（类型）：JWT
+- `Payload`（负载）：
+	- `exp`：到期时间
+- `Signature`（签名）：
+## Refresh Token
+- 问题：无法废除已签发的 jwt
+- 办法：
+  - 签发有效期较长的 `Access Token`，用于获取数据
+  - 签发有效期较短的 `Refresh Token`，用于刷新 `Access Token`
+  - `Access Token` 每次请求都会携带，安全性较低，`Refresh Token` 只在前者失效后才携带，安全性较高
+<Image src={refresh_token.src} alt='token' width={500} height={500}/>

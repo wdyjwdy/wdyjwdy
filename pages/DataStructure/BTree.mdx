@@ -1,0 +1,70 @@
+import Image from 'next/image'
+import pre_order from '/images/docs/pre_order.png'
+import in_order from '/images/docs/in_order.png'
+import post_order from '/images/docs/post_order.png'
+import level_order from '/images/docs/level_order.png'
+
+## 概念
+- 节点的度：子节点的个数
+- 树的度：最大节点的度
+### 节点
+```python
+class TreeNode:
+	def __init__(self, val=0, left=None, right=None):
+		self.val = val
+		self.left = left
+		self.right = right
+```
+## 遍历
+### DFS
+深度优先搜索 (Depth First Search)
+#### 前序遍历
+<Image src={pre_order.src} alt='flex' width={500} height={500}/>
+```python
+def pre_order(self, root):
+	if root:
+		out.append(root.val)
+		pre_order(root.left)
+		pre_order(root.right)
+```
+#### 中序遍历
+<Image src={in_order.src} alt='flex' width={500} height={500}/>
+```python
+def in_order(self, root):
+	if root:
+		in_order(root.left)
+		out.append(root.val)
+		in_order(root.right)
+```
+#### 后序遍历
+<Image src={post_order.src} alt='flex' width={500} height={500}/>
+```python
+def post_order(self, root):
+	if root:
+		post_order(root.left)
+		post_order(root.right)
+		out.append(root.val)
+```
+### BFS
+广度优先搜索 (Breadth First Search)
+#### 层序遍历
+<Image src={level_order.src} alt='flex' width={500} height={500}/>
+```python
+def level_order(self, root: TreeNode) -> list[list[int]]:
+	if not root:
+		return []
+	
+	queue = [root]
+	out = []
+	
+	while queue:
+		out.append([node.val for node in queue])
+		childNodes = []
+		for node in queue:
+			if node.left:
+				childNodes.append(node.left)
+			if node.right:
+				childNodes.append(node.right)
+		queue = childNodes
+	return out
+```

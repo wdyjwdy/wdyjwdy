@@ -1,0 +1,31 @@
+import { Callout } from 'nextra/components'
+
+# 跨站请求伪造 (Cross-Site Request Forgery)
+## 攻击方式
+1. 用户登录 `bank.com`，并留下 `cookie`
+2. 欺骗用户访问 `danger.com`
+3. `danger.com` 向 `bank.com` 发送请求，浏览器会携带 `bank.com` 的 `cookie`
+```html
+// 伪造 GET
+<img src='bank.com/send?user:xxc&money:100'>
+
+// 伪造 POST
+<form action='bank.com/send'>
+	<input name='user' value='xxc'>
+	<input name='money' value='100'>
+</from>
+<script>{ form.submit() }</script>
+
+// 诱导链接
+<a href='bank.com/send?user:xxc&money:100'>girl</>
+```
+<Callout type="error" emoji="️❗️">
+  CSRF 不用注入脚本到用户页面
+</Callout>
+## 防护策略
+### 防止跨域Cookie
+- SameSite：防止 Cookie 跨域
+### 同源检测
+- Referer：请求的来源，包含路径
+- Origin：请求的来源，只包含域名
+- CSRF Token：请求时携带 Token，第三方站点无法获取 Token

@@ -1,0 +1,20 @@
+import Image from 'next/image'
+import session from '/images/docs/session.png'
+
+## 流程
+<Image src={session.src} alt='session' width={500} height={500}/>
+1. 用户向服务器发送账号和密码
+2. 服务器收到请求后，将数据保存到数据库，并生成一个`session_id`，然后添加到 `cookie` 里，然后返回
+```
+Set-Cookie: session_id=123
+```
+3. 浏览器收到 `cookie` 后，保存下来
+4. 浏览器后续请求，将携带 `cookie`
+```
+Cookie: session_id=123
+```
+5. 服务器收到请求后，使用 `session_id` 查询数据库，然后返回数据
+## 缺点
+- 服务器储存困难
+- 多个服务器共享困难
+- 单点登录困难

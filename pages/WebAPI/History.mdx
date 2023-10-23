@@ -1,0 +1,65 @@
+import { Callout } from 'nextra/components'
+
+## 简述
+- `history` 对象是一个栈结构，记录了历史记录
+- 浏览器自动显示栈顶内容
+- `pushState()`, `forward()` 入栈
+- `back()` 出栈
+- `replaceState()` 替换栈顶元素
+## 方法
+### pushState()
+- 效果：向 `history` 添加一个条目，不会刷新页面
+- 语法：`pushState(state, unused, url?)`
+- 参数：
+	- `state`：页面状态，`onpopstate` 触发时传入该对象
+	- `unused`：忽略
+	- `url?`：新条目的 URL，需要与当前 URL 同源
+```js
+// example.com
+window.history.pushState({ a: 1 }, '', xxc) // example.com/xxc
+window.history.state // { a: 1 }
+```
+### replaceState()
+- 效果：修改 `history` 的一个条目，不会刷新页面
+- 语法：`replaceState(state, unused, url?)`
+- 参数：
+	- `state`：页面状态，`onpopstate` 触发时传入该对象
+	- `unused`：忽略
+	- `url?`：新条目的 URL，需要与当前 URL 同源
+```js
+// example/com/xxc
+window.history.replaceState({ b: 2 }, '', 'wj') // example/com/wj
+window.history.state // { b: 2 }
+```
+### back()
+- 效果：上一页
+```js
+history.back()
+```
+### forward()
+- 效果：下一页
+```js
+history.forward()
+```
+### go()
+- 效果：跳转
+```js
+history.go(-1) // 上一页
+history.go(1) // 下一页
+history.go(2) // 下两页
+
+history.go() // 重新加载当前页面
+history.go(0) // 重新加载当前页面
+```
+## 监听
+### onpopstate()
+当 `histroy` 条目激活时，触发 `onpopstate` 事件
+```js
+window.onpopstate = () => {alert('hello')}
+history.pushState({}, '', '/hello')
+window.back() // hello
+```
+<Callout type="error" emoji="️❗️">
+  - `pushState()`, `replaceState()`, `<a>` 不触发 `onpopstate` 事件
+  - `foward()`, `back()`, `go()` 会触发 `onpopstate` 事件
+</Callout>
