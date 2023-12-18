@@ -1,1 +1,79 @@
-## Git
+import { Steps } from 'nextra/components'
+import { FileTree } from 'nextra/components'
+
+## Git开发流程
+<Steps>
+### 第一步
+将远程仓库中的代码**拉取**到本地
+<FileTree>
+  <FileTree.Folder name="pages" defaultOpen>
+    <FileTree.File name="index.html" />
+  </FileTree.Folder>
+</FileTree>
+```bash
+git clone github.com/myWeb.git
+```
+### 第二步
+新建一个**分支**，在该分支中开发新的需求
+```bash
+git branch feature/add_readme # 新建分支 feature/add_readme
+git checkout feature/add_readme # 切换到该分支
+```
+### 第三步
+**修改**本地仓库中的代码
+<FileTree>
+  <FileTree.Folder name="pages" defaultOpen>
+    <FileTree.File name="index.html" />
+    <FileTree.File name="README.md" active />
+  </FileTree.Folder>
+</FileTree>
+### 第四步
+将准备提交的文件放到**暂存**区
+```bash
+git add pages/README.md
+```
+### 第五步
+**提交**暂存区中的所有文件，并为本次提交添加一条简介
+```bash
+git commit -m '添加README文件'
+```
+### 第六步
+将本地仓库中该分支的提交**推送**到远程仓库
+```bash
+git push origin feature/add_readme # origin 表示当前远程仓库地址
+```
+### 第七步
+需求完成，删除本地**分支**
+```bash
+git branch -d feature/add_readme
+```
+</Steps>
+## Git文件状态
+### 查看状态
+```bash
+git status -s
+```
+## Git分支
+## Git常用命令
+### 新建分支，并切换到该分支
+```bash
+git checkout -b [branch_name]
+```
+和下面命令等价
+```bash
+git branch [branch_name]
+git checkout [branch_name]
+```
+### 暂存所有文件
+```bash
+git add .
+```
+### 直接提交所有修改过的文件
+```bash
+git commit -a -m [commit_message]
+```
+和下面命令等价
+```bash
+git add --update # 将所有修改过的文件放入暂存区
+git commit -m [commit_message]
+```
