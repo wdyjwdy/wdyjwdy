@@ -17,5 +17,6 @@
   "---3": {
     "type": "separator"
   },
-  "DataStructure": "DataStructure"
+  "DataStructure": "数据结构",
+  "WorkFlow": "工作流"
 }
