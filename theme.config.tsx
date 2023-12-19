@@ -30,6 +30,16 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/wdyjwdy/wdyjwdy',
   },
   docsRepositoryBase: 'https://github.com/wdyjwdy/wdyjwdy',
+  feedback: {
+    content: null
+  },
+  editLink: {
+    component: null
+  },
+  toc: {
+    title: null
+  },
+  darkMode: false,
 }
 
 export default config

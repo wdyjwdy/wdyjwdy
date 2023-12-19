@@ -14,7 +14,7 @@ import { FileTree } from 'nextra/components'
 git clone github.com/myWeb.git
 ```
 ### 第二步
-新建一个**分支**，在该分支中开发新的需求
+新建一个需求**分支**，在该分支中开发新的需求
 ```bash
 git branch feature/add_readme # 新建分支 feature/add_readme
 git checkout feature/add_readme # 切换到该分支
@@ -43,9 +43,11 @@ git commit -m '添加README文件'
 git push origin feature/add_readme # origin 表示当前远程仓库地址
 ```
 ### 第七步
-需求完成，删除本地**分支**
+完成需求后，在本地，将需求分支**合并**到主分支，然后**删除**需求分支
 ```bash
-git branch -d feature/add_readme
+git checkout main # 先切换回主分支
+git merge feature/add_readme # 然后将需求分支合并到主分支
+git branch -d feature/add_readme # 最后删除需求分支
 ```
 </Steps>
 ## Git文件状态
@@ -54,16 +56,21 @@ git branch -d feature/add_readme
 git status -s
 ```
 ## Git分支
-## Git常用命令
-### 新建分支，并切换到该分支
+### 分支操作
+#### 新建分支
+```bash
+git branch [branch_name]
+```
+#### 切换分支
+```bash
+git checkout [branch_name]
+```
+#### 新建分支，并切换到该分支
+等价于 `git branch` 加 `git checkout`
 ```bash
 git checkout -b [branch_name]
 ```
-和下面命令等价
-```bash
-git branch [branch_name]
-git checkout [branch_name]
-```
+## Git常用命令
 ### 暂存所有文件
 ```bash
 git add .

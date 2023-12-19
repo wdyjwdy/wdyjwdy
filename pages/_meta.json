@@ -13,7 +13,6 @@
   "Attack": "Attack",
   "Auth": "Auth",
   "WebAPI": "Web API",
-  "Cache": "Cache",
   "---3": {
     "type": "separator"
   },
