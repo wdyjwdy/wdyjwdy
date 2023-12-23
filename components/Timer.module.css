@@ -7,10 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.timer p:nth-child(1) {
-  color: gray;
+  color: dimgrey;
 }
 
 .timer p:nth-child(2) {
@@ -18,12 +15,9 @@
   font-size: 40px;
 }
 
-.timer p:nth-child(3) {
-  color: gray;
-}
-
 @media (prefers-color-scheme: dark) {
   .timer {
     border-color: gray;
+    color: gray;
   }
 }

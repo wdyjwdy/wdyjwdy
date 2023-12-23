@@ -1,0 +1,48 @@
+.love {
+  width: 120px;
+  height: 120px;
+  border: 1px gainsboro solid;
+  border-radius: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: dimgrey;
+  opacity: 1;
+}
+
+.love p:nth-child(1) {
+  font-size: 70px;
+  color: palevioletred;
+  height: 60px;
+  line-height: 60px;
+  transition: 1s;
+}
+
+.love p:nth-child(1):hover {
+  transition: 1s;
+  font-size: 120px;
+}
+
+.love p:nth-child(1):hover ~p {
+  transition: 1s;
+  opacity: 0;
+}
+
+.love p:nth-child(2) {
+  order: -1;
+  opacity: 1;
+  transition: 1s;
+}
+
+.love p:nth-child(3) {
+  opacity: 1;
+  transition: 1s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .love {
+    border-color: gray;
+    color: gray;
+  }
+}
