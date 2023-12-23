@@ -1,0 +1,17 @@
+.map {
+  width: 400px;
+  height: 300px;
+  border: 1px gainsboro solid;
+  border-radius: 10px;
+  color: indianred;
+}
+
+.map svg g path:hover {
+  fill: palevioletred;
+}
+
+@media (prefers-color-scheme: dark) {
+  .map {
+    border-color: gray;
+  }
+}
