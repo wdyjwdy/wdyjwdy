@@ -3,15 +3,28 @@
   height: 300px;
   border: 1px gainsboro solid;
   border-radius: 10px;
-  color: indianred;
+  color: dimgray;
 }
 
-.map svg g path:hover {
+.map svg path {
+  fill: skyblue;
+}
+
+.map svg path[class=selected] {
+  fill: indianred;
+}
+
+.map svg path:hover {
   fill: palevioletred;
 }
 
 @media (prefers-color-scheme: dark) {
   .map {
     border-color: gray;
+    color: gray;
+  }
+
+  .map svg path {
+    fill: darkslateblue;
   }
 }
