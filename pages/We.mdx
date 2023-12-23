@@ -1,9 +1,13 @@
 import Chat from '/components/Chat.jsx'
+import Timer from '/components/Timer.jsx'
 
 # 我们
-<Chat>
-  <Chat.Item name='wj' text='hello' />
-  <Chat.Item name='wj' text='hi' />
-  <Chat.Item name='xxc' text='爱你呦💕' right />
-  <Chat.Item name='wj' text='sbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsb' />
-</Chat>
+<div style={{ display: 'flex', gap: 10 }}>
+  <Chat>
+    <Chat.Item name='wj' text='hello' />
+    <Chat.Item name='wj' text='hi' />
+    <Chat.Item name='xxc' text='爱你呦💕' right />
+    <Chat.Item name='wj' text='sbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsb' />
+  </Chat>
+  <Timer />
+</div>
