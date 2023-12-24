@@ -13,7 +13,7 @@ export default function Chat({ children }) {
 Chat.Item = Item
 
 export function Item({ name, text, right }) {
-  const textColor = name === 'wj' ? '#005493' : '#C71585'
+  const textColor = name === 'wj' ? '#005493' : 'palevioletred'
   const avatar = name === 'wj' ? wj.src : xxc.src
 
   return (
