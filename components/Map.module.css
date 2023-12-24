@@ -6,6 +6,13 @@
   color: dimgray;
 }
 
+.map span {
+  background-color: whitesmoke;
+  border-radius: 2px;
+  padding: 0 4px;
+  position: absolute;
+}
+
 .map svg path {
   fill: skyblue;
 }
@@ -26,5 +33,9 @@
 
   .map svg path {
     fill: darkslateblue;
+  }
+
+  .map span {
+    background-color: maroon;
   }
 }
