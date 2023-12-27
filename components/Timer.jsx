@@ -1,4 +1,4 @@
-import styles from './Timer.module.css'
+import styles from './Timer.module.sass'
 
 export default function Timer() {
   const time = getTimeSpan()

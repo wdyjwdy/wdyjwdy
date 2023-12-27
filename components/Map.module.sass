@@ -1,0 +1,37 @@
+.map
+  width: 400px
+  height: 300px
+  border: 1px gainsboro solid
+  border-radius: 10px
+
+  span[class=toolTips]
+    background-color: whitesmoke
+    border-radius: 2px
+    padding: 0 4px
+    position: absolute
+
+  svg
+    text
+      font: 30px sans-serif
+    rect
+      fill: whitesmoke
+    path
+      fill: skyblue
+    path[class=selected]
+      fill: indianred
+    path:hover
+      fill: palevioletred
+
+@media (prefers-color-scheme: dark)
+  .map
+    border-color: gray
+    svg path
+      fill: darkslateblue
+    span[class=toolTips]
+      background-color: midnightblue
+    svg
+      text
+        fill: #ffffffb5
+      rect
+        fill: #1f1f1f
+ 

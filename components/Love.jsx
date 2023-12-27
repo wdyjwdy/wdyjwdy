@@ -1,4 +1,4 @@
-import styles from './Love.module.css'
+import styles from './Love.module.sass'
 
 export default function Love() {
   return (

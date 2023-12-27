@@ -1,4 +1,4 @@
-import styles from './Chat.module.css'
+import styles from './Chat.module.sass'
 import xxc from '/images/xxc.jpg'
 import wj from '/images/wj.jpg'
 
