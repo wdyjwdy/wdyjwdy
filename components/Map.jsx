@@ -1,5 +1,5 @@
 import styles from './Map.module.sass'
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import { chinaProvinces } from '../datas/maps'
 
 const items = [
@@ -21,7 +21,7 @@ export default function Map({ selected = [] }) {
    return (
       <div className={styles.map}>
          <ToolTip pos={pos} text={province} />
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" onMouseMove={handleMove}>
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 800 600" onMouseMove={handleMove}>
             <Legend items={items} x={10} y={450} />
             {chinaProvinces.map(([id, d]) => (
                <path
@@ -29,6 +29,8 @@ export default function Map({ selected = [] }) {
                   className={selected.includes(id) ? 'selected' : ''}
                />
             ))}
+            <text x={610} y={390} fontSize={40} onMouseMove={handleMove} id='xxc'>{'🚹'}</text>
+            <text x={410} y={410} fontSize={40} onMouseMove={handleMove} id='wj'>{'🚺'}</text>
          </svg>
       </div>
    )
