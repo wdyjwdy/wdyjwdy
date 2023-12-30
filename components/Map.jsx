@@ -1,20 +1,16 @@
 import styles from './Map.module.sass'
 import { useState } from 'react'
-import { chinaProvinces } from '../datas/maps'
-
-const items = [
-   { id: 1, text: '去过', color: 'indianred' },
-   { id: 2, text: '没去过', color: 'skyblue' },
-]
+import { chinaProvinces, legendItems } from '../datas/maps'
 
 export default function Map({ selected = [] }) {
    const [pos, setPos] = useState({ x: -100, y: -100 })
    const [province, setProvince] = useState('')
-   const handleMove = e => {
+
+   function handleMove(e) {
       setProvince(e.target.id)
       setPos({
          x: e.pageX + 10,
-         y: e.pageY + 20
+         y: e.pageY + 20,
       })
    }
 
@@ -22,7 +18,7 @@ export default function Map({ selected = [] }) {
       <div className={styles.map}>
          <ToolTip pos={pos} text={province} />
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 800 600" onMouseMove={handleMove}>
-            <Legend items={items} x={10} y={450} />
+            <Legend items={legendItems} x={10} y={450} />
             {chinaProvinces.map(([id, d]) => (
                <path
                   d={d} id={id} key={id}
@@ -45,9 +41,6 @@ function ToolTip({ pos, text }) {
 }
 
 function Legend({ items, x=10, y=10 }) {
-   // 需要在 <svg> 里使用
-   // items = [{ id: 1, text: '去过', color: 'indianred' }, ...]
-
    const height = 40 * items.length
 
    function Item({ text, color, x, y, index }) {
