@@ -1,20 +1,10 @@
+/* ---------------- Map  ---------------- */
 .map
   width: 400px
-  height: 300px
   border: 1px gainsboro solid
   border-radius: 10px
 
-  span[class=toolTips]
-    background-color: whitesmoke
-    border-radius: 2px
-    padding: 0 4px
-    position: absolute
-
   svg
-    text
-      font: 30px sans-serif
-    rect
-      fill: whitesmoke
     path
       fill: skyblue
     path[class=selected]
@@ -25,13 +15,35 @@
 @media (prefers-color-scheme: dark)
   .map
     border-color: gray
-    svg path
-      fill: darkslateblue
-    span[class=toolTips]
-      background-color: midnightblue
-    svg
-      text
-        fill: #ffffffb5
-      rect
-        fill: #1f1f1f
+    svg 
+      path
+        fill: darkslateblue
+
+/* ---------------- Legend  ---------------- */
+.legend
+  text
+    font: 30px sans-serif
+  rect
+    fill: whitesmoke
+
+@media (prefers-color-scheme: dark)
+  .legend
+    text
+      fill: #ffffffb5
+    rect
+      fill: #1f1f1f
+    g[class=item-1]
+      circle
+        fill: darkslateblue
+
+/* ---------------- ToolTip  ---------------- */
+.tooltip
+  background-color: whitesmoke
+  border-radius: 2px
+  padding: 0 4px
+  position: absolute
+
+@media (prefers-color-scheme: dark)
+  .tooltip
+    background-color: #1f1f1f
  
