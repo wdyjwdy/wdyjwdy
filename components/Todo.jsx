@@ -1,10 +1,5 @@
 import styles from './Todo.module.sass'
-
-const todos = [
-  { id: 0, text: '找到工作💰💰💰' },
-  { id: 1, text: '顺利毕业👩‍🎓🎓🧑‍🎓' },
-  { id: 2, text: '永不分开💜💜💜' },
-]
+import { todoItems } from '../constants/datas'
 
 export default function Todo() {
   return (
@@ -13,7 +8,7 @@ export default function Todo() {
         <p>新年愿望</p>
       </div>
       <div className={styles.items}>
-        {todos.map(todo => <Item text={todo.text} key={todo.id} />)}
+        {todoItems.map(todo => <Item text={todo.text} key={todo.id} />)}
       </div>
     </div>
   )

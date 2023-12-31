@@ -1,6 +1,6 @@
 import styles from './Map.module.sass'
 import { useState } from 'react'
-import { chinaProvinces, legendItems } from '../datas/maps'
+import { chinaProvinces, legendItems } from '../constants/datas'
 
 export default function Map({ selected = [] }) {
    const [pos, setPos] = useState({ x: -100, y: -100 })
