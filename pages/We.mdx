@@ -1,12 +1,15 @@
 import { Chat, Timer , Love, Map, Todo } from '/components'
+import { chatItems } from '/constants/datas'
 
 # 我们
 <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
   <Chat>
-    <Chat.Item name='wj' text='hello' />
-    <Chat.Item name='wj' text='hi' />
-    <Chat.Item name='xxc' text='爱你呦💕' right />
-    <Chat.Item name='wj' text='sbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsb' />
+    {chatItems.map(item => (
+      <Chat.Item
+        key={item.id} name={item.name}
+        text={item.text} right={item.right}
+      />
+    ))}
   </Chat>
   <Timer />
   <Love />

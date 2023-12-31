@@ -46,3 +46,11 @@ export const todoItems = [
   { id: 1, text: '顺利毕业👩‍🎓🎓🧑‍🎓' },
   { id: 2, text: '永不分开💜💜💜' },
 ]
+
+// Chat
+export const chatItems = [
+  { id: 0, name: 'wj', text: 'hello', right: false },
+  { id: 1, name: 'wj', text: 'hi', right: false },
+  { id: 2, name: 'xxc', text: '爱你呦💕', right: true },
+  { id: 3, name: 'wj', text: 'sbsbsbsbsbsbsbsb', right: false },
+]
