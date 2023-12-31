@@ -17,7 +17,7 @@ function Item({ text, icon='◎' }) {
   return (
     <p>
       <span>{icon}</span>
-      {text}
+      <span>{text}</span>
     </p>
   )
 }
