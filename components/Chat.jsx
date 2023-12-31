@@ -2,17 +2,15 @@ import styles from './Chat.module.sass'
 import xxc from '/images/xxc.jpg'
 import wj from '/images/wj.jpg'
 
-export default function Chat({ children }) {
+export default function Chat({ items }) {
   return (
     <div className={styles.chat}>
-      { children }
+      {items.map(item => <Item name={item.name} text={item.text} right={item.right} />)}
     </div>
   )
 }
 
-Chat.Item = Item
-
-export function Item({ name, text, right }) {
+function Item({ name, text, right }) {
   const textColor = name === 'wj' ? '#005493' : 'palevioletred'
   const avatar = name === 'wj' ? wj.src : xxc.src
 
