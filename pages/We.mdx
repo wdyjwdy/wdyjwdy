@@ -1,5 +1,5 @@
 import { Chat, Timer , Love, Map, Todo } from '/components'
-import { chatItems, todoItems } from '/constants/datas'
+import { chatItems, todoItems, selectedProvinces } from '/constants/datas'
 
 # 我们
 <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
@@ -7,5 +7,5 @@ import { chatItems, todoItems } from '/constants/datas'
   <Timer />
   <Love />
   <Todo items={todoItems} />
-  <Map selected={['四川', '重庆', '湖南']} />
+  <Map selected={selectedProvinces} />
 </div>

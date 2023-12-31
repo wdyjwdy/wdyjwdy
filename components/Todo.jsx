@@ -4,7 +4,7 @@ export default function Todo({ items }) {
   return (
     <div className={styles.todo}>
       <div className={styles.title}>
-        <p>新年愿望</p>
+        <p>Todo</p>
       </div>
       <div className={styles.items}>
         {items.map(item => <Item text={item.text} key={item.id} />)}

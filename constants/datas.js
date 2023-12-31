@@ -39,6 +39,11 @@ export const legendItems = [
   { id: 1, text: '去过', color: 'indianred' },
   { id: 2, text: '没去过', color: 'skyblue' },
 ]
+export const selectedProvinces = [
+  '四川',
+  '重庆',
+  '湖南',
+]
 
 // Todo
 export const todoItems = [
